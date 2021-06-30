@@ -1,0 +1,14 @@
+{% block content %}
+    <form action="">
+
+        <div class="text-right">
+            <input value="{{ request.GET.q }}" name="q" type="text">
+            <button class="btn btn-success btn-sm" type="submit">Search</button>
+            <a href="/my_admin/create/">
+                <button class="btn btn-primary btn-sm" type="button">Create</button>
+            </a>
+            <button class="btn btn-danger btn-sm">Logout</button>
+            <hr>
+        </div>
+    </form>
+{% endblock %}

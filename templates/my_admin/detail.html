@@ -1,0 +1,14 @@
+{% extends 'layouts/my_admin_base.html' %}
+
+{% block content %}
+    <div class="card">
+        {% if data.cover %}
+            <img style="width: 1110px; height: 600px" src="{{ data.cover.url }}">
+        {% endif %}
+        <div class="card-body">
+            <h3 class="card-title">{{ data.title }}</h3>
+            <h5>{{ data.brand }}</h5>
+            <p class="small-container"> {{ data.summary|safe }}</p>
+        </div>
+    </div>
+{% endblock %}

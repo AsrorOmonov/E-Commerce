@@ -1,0 +1,12 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+    <div class="container">
+        <img src="{{ data.cover.url }}">
+
+        <h4>{{ data.title }}</h4>
+
+        <h3>Brand: {{ data.brand.name }}</h3>
+        <p>{{ data.summary|safe }}</p>
+    </div>
+{% endblock %}
