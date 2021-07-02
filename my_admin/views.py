@@ -1,7 +1,6 @@
 from django.db.models import Q
 from django.shortcuts import render, get_object_or_404, redirect
 
-# Create your views here.
 from my_admin.forms import OutfitModelForm
 from my_admin.models import OutfitModel
 
