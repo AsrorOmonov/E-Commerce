@@ -3,15 +3,9 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 
-from my_admin.views import index, detail, create, edit, delete
-
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('my_admin/', index),
-    path('my_admin/<int:pk>/', detail),
-    path('my_admin/create/', create),
-    path('my_admin/<int:pk>/edit/', edit),
-    path('my_admin/<int:pk>/delete/', delete),
+    path('my_admin/', include('my_admin.urls', 'my_admin')),
     path('', include('home.urls', 'home'))
 
 ]
