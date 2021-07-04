@@ -7,7 +7,6 @@ from my_admin.models import OutfitModel
 
 def index(request):
     q = request.GET.get('q')
-
     if q:
         outfit = OutfitModel.objects.filter(Q(title__icontains=q) | Q(brand__name__icontains=q)).order_by('pk')
     else:
@@ -22,7 +21,6 @@ def index(request):
 
 def detail(request, pk):
     data = get_object_or_404(OutfitModel, pk=pk)
-
     context = {
         'data': data
     }
@@ -76,3 +74,5 @@ def delete(request, pk):
     data = get_object_or_404(OutfitModel, pk=pk)
     data.delete()
     return redirect('/my_admin/')
+
+
