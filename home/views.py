@@ -40,13 +40,11 @@ class OutfitListView(ListView):
     template_name = 'index.html'
 
     def get_queryset(self):
-
-        q = self.request.POST.get('q')
-
-        data = OutfitModel.objects.all()
+        get_data = self.request.POST
+        q = get_data.get('q')
 
         if q:
-            data = data.filter(Q(title__icontains=q))
+            data = OutfitModel.objects.filter(Q(title__icontains=q))
         else:
             data = OutfitModel.objects.all()
         return data
@@ -54,7 +52,7 @@ class OutfitListView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['data'] = OutfitModel.objects.all()
-
+        return context
 
 def detail(request, pk):
     data = get_object_or_404(OutfitModel, pk=pk)
