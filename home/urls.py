@@ -1,10 +1,9 @@
 from django.urls import path
-
-from home.views import index, detail
+from home.views import index, detail, OutfitListView
 
 app_name = 'home'
 
 urlpatterns = [
-    path('', index),
+    path('', OutfitListView.as_view()),
     path('<int:pk>/', detail)
 ]
